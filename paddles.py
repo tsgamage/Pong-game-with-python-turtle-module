@@ -28,7 +28,7 @@ class Paddle(Turtle):
             new_y = current_y + distance
             self.goto(self.x,new_y)
 
-    def go_down(self, distance=10):
+    def go_down(self, distance=20):
         if self.ycor() > -240:
             current_y = self.ycor()
             new_y = current_y - distance
