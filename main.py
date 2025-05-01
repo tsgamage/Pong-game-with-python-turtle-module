@@ -2,6 +2,7 @@ import time
 from turtle import Screen
 from paddles import Paddle
 from ball import Ball
+from scoreboard import Scoreboard
 
 screen = Screen()
 screen.setup(width=800, height=600)
@@ -13,6 +14,8 @@ right_paddle = Paddle(360, 0)
 left_paddle = Paddle(-370, 0)
 
 ball = Ball()
+score_right = Scoreboard(100,0)
+score_left = Scoreboard(-100,0)
 
 screen.listen()
 
@@ -46,8 +49,10 @@ while _game_running:
 
     if ball_pass_right_paddle:
         ball.missed("right")
+        score_left.add_a_point()
 
     if ball_pass_left_paddle:
         ball.missed("left")
+        score_right.add_a_point()
 
 screen.exitonclick()
