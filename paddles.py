@@ -17,16 +17,19 @@ class Paddle(Turtle):
         self.speed("slowest")
 
     def move(self,y_from, y_to):
+
         self.goto(self.x, y_from)
         self.goto(self.x, y_to)
 
 
     def go_up(self, distance=10):
-        current_y = self.ycor()
-        new_y = current_y + distance
-        self.goto(self.x,new_y)
+        if self.ycor() < 250:
+            current_y = self.ycor()
+            new_y = current_y + distance
+            self.goto(self.x,new_y)
 
     def go_down(self, distance=10):
-        current_y = self.ycor()
-        new_y = current_y - distance
-        self.goto(self.x, new_y)
+        if self.ycor() > -240:
+            current_y = self.ycor()
+            new_y = current_y - distance
+            self.goto(self.x, new_y)
